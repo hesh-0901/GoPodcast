@@ -2,13 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GoPodcast</title>
 
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Font -->
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <script>
@@ -19,8 +20,8 @@
             sans: ['Inter', 'sans-serif'],
           },
           colors: {
-            primary: '#6366f1',
-            dark: '#0f172a'
+            primary: '#7c3aed',
+            dark: '#0b0f19'
           }
         }
       }
@@ -30,111 +31,131 @@
 
 <body class="bg-dark text-white font-sans">
 
-  <!-- NAVBAR -->
-  <header class="flex items-center justify-between px-6 py-4 border-b border-gray-800">
-    <h1 class="text-2xl font-bold text-primary">GoPodcast</h1>
+<!-- MAIN CONTAINER -->
+<div class="max-w-md mx-auto md:max-w-6xl">
 
-    <nav class="hidden md:flex gap-6 text-gray-300">
-      <a href="#" class="hover:text-white">Accueil</a>
-      <a href="#" class="hover:text-white">Podcasts</a>
-      <a href="#" class="hover:text-white">Catégories</a>
-      <a href="#" class="hover:text-white">Contact</a>
-    </nav>
-
-    <button class="md:hidden text-white text-2xl">☰</button>
-  </header>
-
-  <!-- HERO -->
-  <section class="px-6 py-16 text-center">
-    <h2 class="text-4xl md:text-6xl font-bold leading-tight">
-      Écoute des <span class="text-primary">podcasts chrétiens</span> inspirants
-    </h2>
-
-    <p class="mt-6 text-gray-400 max-w-xl mx-auto">
-      Découvre des messages puissants, des témoignages et des enseignements pour nourrir ta foi chaque jour.
-    </p>
-
-    <div class="mt-8 flex justify-center gap-4">
-      <button class="bg-primary px-6 py-3 rounded-xl font-semibold hover:opacity-90">
-        🎧 Écouter maintenant
-      </button>
-
-      <button class="border border-gray-700 px-6 py-3 rounded-xl hover:bg-gray-800">
-        Explorer
-      </button>
+  <!-- HEADER -->
+  <div class="flex items-center justify-between px-4 pt-6">
+    <div class="flex items-center gap-3">
+      <img src="https://i.pravatar.cc/40" class="w-10 h-10 rounded-full"/>
+      <div>
+        <p class="text-sm text-gray-400">Bonjour</p>
+        <h2 class="font-semibold">Utilisateur</h2>
+      </div>
     </div>
-  </section>
 
-  <!-- PODCASTS GRID -->
-  <section class="px-6 py-12">
-    <h3 class="text-2xl font-semibold mb-8">🔥 Derniers épisodes</h3>
+    <button class="p-2 bg-gray-800 rounded-full">
+      <i data-lucide="bell"></i>
+    </button>
+  </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- SEARCH -->
+  <div class="px-4 mt-6">
+    <div class="flex items-center gap-3 bg-gray-900 px-4 py-3 rounded-xl">
+      <i data-lucide="search" class="text-gray-400"></i>
+      <input type="text" placeholder="Rechercher podcast..."
+        class="bg-transparent outline-none w-full text-sm"/>
+    </div>
+  </div>
+
+  <!-- SECTION PODCAST FOR YOU -->
+  <section class="mt-8 px-4">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="font-semibold text-lg">Pour toi</h3>
+      <a href="#" class="text-primary text-sm">Voir tout</a>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto">
 
       <!-- CARD -->
-      <div class="bg-gray-900 rounded-2xl p-4 hover:scale-105 transition">
-        <img src="https://source.unsplash.com/400x300/?church" class="rounded-xl mb-4" />
-        <h4 class="font-semibold text-lg">La foi en action</h4>
-        <p class="text-gray-400 text-sm mt-2">Un message inspirant pour renforcer ta foi.</p>
-        <button class="mt-4 text-primary">▶️ Écouter</button>
+      <div class="min-w-[250px] bg-gray-900 rounded-2xl p-4">
+        <img src="https://source.unsplash.com/200x200/?church"
+             class="rounded-xl mb-3"/>
+        <h4 class="font-semibold">Foi & Vie</h4>
+        <p class="text-sm text-gray-400">Messages inspirants</p>
       </div>
 
-      <div class="bg-gray-900 rounded-2xl p-4 hover:scale-105 transition">
-        <img src="https://source.unsplash.com/400x300/?bible" class="rounded-xl mb-4" />
-        <h4 class="font-semibold text-lg">Parole du jour</h4>
-        <p class="text-gray-400 text-sm mt-2">Un verset et son explication quotidienne.</p>
-        <button class="mt-4 text-primary">▶️ Écouter</button>
-      </div>
-
-      <div class="bg-gray-900 rounded-2xl p-4 hover:scale-105 transition">
-        <img src="https://source.unsplash.com/400x300/?worship" class="rounded-xl mb-4" />
-        <h4 class="font-semibold text-lg">Louange & Adoration</h4>
-        <p class="text-gray-400 text-sm mt-2">Entre dans une atmosphère spirituelle.</p>
-        <button class="mt-4 text-primary">▶️ Écouter</button>
+      <div class="min-w-[250px] bg-gray-900 rounded-2xl p-4">
+        <img src="https://source.unsplash.com/200x200/?bible"
+             class="rounded-xl mb-3"/>
+        <h4 class="font-semibold">Parole du jour</h4>
+        <p class="text-sm text-gray-400">Chaque matin</p>
       </div>
 
     </div>
   </section>
 
-  <!-- FEATURED PODCAST -->
-  <section class="px-6 py-12">
-    <div class="bg-gradient-to-r from-primary to-purple-600 rounded-3xl p-8 flex flex-col md:flex-row items-center gap-6">
+  <!-- TOP CREATORS -->
+  <section class="mt-8 px-4">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="font-semibold text-lg">Créateurs</h3>
+      <a href="#" class="text-primary text-sm">Voir tout</a>
+    </div>
 
-      <img src="https://source.unsplash.com/300x200/?pastor" class="rounded-xl w-full md:w-1/3" />
+    <div class="flex gap-4 overflow-x-auto">
+      <img src="https://i.pravatar.cc/100?img=1" class="w-16 h-16 rounded-full"/>
+      <img src="https://i.pravatar.cc/100?img=2" class="w-16 h-16 rounded-full"/>
+      <img src="https://i.pravatar.cc/100?img=3" class="w-16 h-16 rounded-full"/>
+      <img src="https://i.pravatar.cc/100?img=4" class="w-16 h-16 rounded-full"/>
+    </div>
+  </section>
 
-      <div>
-        <h3 class="text-2xl font-bold">Podcast en vedette</h3>
-        <p class="mt-3 text-gray-200">
-          Découvre notre épisode spécial avec un message puissant pour transformer ta vie.
-        </p>
+  <!-- TRENDING -->
+  <section class="mt-8 px-4 pb-24">
+    <h3 class="font-semibold text-lg mb-4">Tendance</h3>
 
-        <button class="mt-4 bg-white text-black px-5 py-2 rounded-xl font-semibold">
-          ▶️ Écouter
+    <div class="space-y-4">
+
+      <!-- ITEM -->
+      <div class="flex items-center justify-between bg-gray-900 p-3 rounded-xl">
+        <div class="flex items-center gap-3">
+          <img src="https://source.unsplash.com/100x100/?worship"
+               class="w-14 h-14 rounded-lg"/>
+          <div>
+            <h4 class="font-medium">Louange profonde</h4>
+            <p class="text-sm text-gray-400">12 épisodes</p>
+          </div>
+        </div>
+
+        <button class="bg-primary p-3 rounded-full">
+          <i data-lucide="play"></i>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between bg-gray-900 p-3 rounded-xl">
+        <div class="flex items-center gap-3">
+          <img src="https://source.unsplash.com/100x100/?pray"
+               class="w-14 h-14 rounded-lg"/>
+          <div>
+            <h4 class="font-medium">Prière du matin</h4>
+            <p class="text-sm text-gray-400">8 épisodes</p>
+          </div>
+        </div>
+
+        <button class="bg-primary p-3 rounded-full">
+          <i data-lucide="play"></i>
         </button>
       </div>
 
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
-  <section class="px-6 py-16 text-center">
-    <h3 class="text-2xl font-semibold">📩 Reçois nos nouveaux podcasts</h3>
-    <p class="text-gray-400 mt-2">Abonne-toi pour ne rien manquer</p>
+</div>
 
-    <div class="mt-6 flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
-      <input type="email" placeholder="Ton email"
-        class="px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 w-full">
+<!-- BOTTOM NAV MOBILE -->
+<div class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-800 px-6 py-3 flex justify-between md:hidden">
 
-      <button class="bg-primary px-6 py-3 rounded-xl">
-        S'abonner
-      </button>
-    </div>
-  </section>
+  <button><i data-lucide="home"></i></button>
+  <button><i data-lucide="compass"></i></button>
+  <button><i data-lucide="plus-circle"></i></button>
+  <button><i data-lucide="library"></i></button>
+  <button><i data-lucide="user"></i></button>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-gray-800 px-6 py-6 text-center text-gray-500">
-    © 2026 GoPodcast - Tous droits réservés
-  </footer>
+</div>
+
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>
